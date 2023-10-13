@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script> // expressao de função
+
+        let codInter
+
+        const eventoInterval = function (){
+            if( isNaN (caixa.value) == false) { //se o valor inserido dentro da caixa for numero, executa o codidigo abaixo.
+                caixa.disabled =true; // deabilitando o imput
+                btnInterval.disabled =true;//desabilitando o botao
+                codInter = setInterval( repeticao, 1 )
+            } 
+            else{ // o que for inserido dendo do input não for numero, execura a função abaixo.
+                caixa.style.backgroundColor = "red" 
+            }
+        }
+
+        const repeticao = function () {
+            caixa.value++
+        }
+        
+        const eventoClearInterval = function() {
+            btnInterval.disabled =false;
+            btnInterval.disabled =false;
+            clearInterval(codInter) // clearInterval para a execução
+        }
+
+    </script>
+
+</head>
+<body>
+
+    <button id="btnInterval">setInterval</button>
+    <input type="text" id="caixa">
+    <button id="btnClearInterval"> ClearTimeout</button>
+
+    <script>
+            const btnInterval = document.getElementById('btnInterval')
+            const btnClearInterval = document.getElementById("btnClearInterval")
+            const caixa = document.getElementById ("caixa")
+
+
+            btnInterval.addEventListener('click', eventoInterval)
+            btnClearInterval.addEventListener('click', eventoClearInterval)
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>     //Declaração de variavem em um script externo.
+
+    function temporizador (){
+        alert("Alerta Executado")
+    }
+
+    function eventoTimeout (){    
+        CodTime = setTimeout( temporizador, 4000) // o CodTime é uma variavel que é ativada quando cliclamos no botão
+         console.log("Evento niciado")
+    }
+
+    function eventoClearTimeout (){
+        clearTimeout(CodTime) //coloquei a variavel "CodTime" dentro do ClearTiemout que para a execução quando clicamos  
+        console.log("Evento Cancelado")  
+    }
+
+
+</script>
+
+<body>
+    
+    <button id="btnTimeout"> SetTimeout</button>
+    <button id="btnClearTimeout"> ClearTimeout</button>
+
+    <script>
+
+        const btnTimeout = document.getElementById("btnTimeout")
+        const btnClearTimeout = document.getElementById("btnClearTimeout")
+
+
+        btnTimeout.addEventListener('click', eventoTimeout)
+        btnClearTimeout.addEventListener('click', eventoClearTimeout)
+
+    </script>
+</body>
+</html>
